@@ -1,0 +1,283 @@
+/* Custom Styles */
+
+/* Reset and General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* Header Styles */
+.header {
+  background-image: url('/public/pics/clients-and-real-estate-agent-in-house-looking-at-back-yard-gettyimages-1427687210-1300w-867h.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  position: relative;
+  color: #ffffff;
+  
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Heading */
+.header h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/* Search Bar Customization */
+.input-group {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex; /* Aligns items in a single row */
+  max-width: 600px;
+  margin: 0 auto;
+  align-items: center; /* Align children vertically */
+
+}
+
+.input-group .form-control,
+.input-group .btn {
+  height: 50px; /* Set a consistent height */
+  box-sizing: border-box; /* Include padding in height */
+  border-radius: 30px 0 0 30px; /* Matches button shape */
+
+}
+
+
+.input-group .btn {
+  border-radius: 0 30px 30px 0;
+  background-color: #8C52FF;
+  color: #ffffff;
+  padding: 24px 30px;
+  font-size: 16px;
+  height: auto; /* Ensures it matches the input's height */
+  box-sizing: border-box; /* Include padding in height */
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+
+}
+
+.btn {
+  transition: background-color 0.3s ease;
+}
+
+
+/* Services Section */
+.services-section {
+  margin-top: 60px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #666666;
+}
+
+.btn-primary {
+  background-color: #8C52FF;
+  border-radius: 150px
+}
+
+.btn-primary:hover {
+  background-color: #7857bc;
+  border-radius: 15px
+}
+
+/* Carousel Customization */
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  border-radius: 50%;
+  padding: 20px;
+}
+
+
+
+
+/* Footer Styles */
+.footer {
+  background-color: #ffffff; /* Matches the rest of the site's background color */
+  color: #000; /* Black text for consistency */
+  padding: 40px 20px;
+  font-family: Arial, sans-serif; /* Consistent font with the rest of the site */
+}
+
+.footer-container {
+  display: flex; /* Change grid to flexbox */
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+  justify-content: space-between; /* Distribute space between columns */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1 1 calc(25% - 20px); /* 4 equal columns with 20px gap */
+  margin: 10px; /* Add spacing between columns */
+  min-width: 150px; /* Prevent columns from becoming too narrow */
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #000; /* Black text */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #000; /* Black text for links */
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #8C52FF; /* Purple on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-icons {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; /* Center icons */
+  gap: 15px; /* Add spacing between icons */
+}
+
+.footer-icons a {
+  color: #8C52FF; /* Purple for icons */
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.footer-icons a:hover {
+  color: #555; /* Dark gray on hover */
+}
+
+.footer-logo {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.footer-bottom p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #000; /* Black text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .footer-column {
+    flex: 1 1 100%; /* Make columns full-width */
+    text-align: center;
+  }
+
+  .footer-icons {
+    gap: 10px; /* Reduce spacing between icons */
+  }
+
+  .footer-logo img {
+    width: 100px;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .header h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 50vh;
+  }
+  .carousel-item img {
+    height: 300px;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    padding: 15px;
+  }
+  .input-group {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .header {
+    height: 40vh;
+  }
+  .carousel-item img {
+    height: 200px;
+  }
+}

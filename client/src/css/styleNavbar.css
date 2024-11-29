@@ -1,0 +1,25 @@
+.custom-container{
+    height: 15svh;
+    overflow: visible; /* Permite que los elementos hijos se expandan fuera del contenedor */
+    position: relative; 
+}
+
+.container-padre{
+
+  overflow: visible; /* Permite que los elementos hijos se expandan fuera del contenedor */
+  position: relative; 
+}
+
+
+  
+  /* Estilo para la imagen del perfil */
+  .profile-img {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%; /* Hace la imagen circular */
+  }
+ 
+  .imagen-personal img {
+   width: 120px;
+   height: auto;
+  }
