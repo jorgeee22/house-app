@@ -14,27 +14,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 require('dotenv').config();
 
-
-const PORT = process.env.PORT || 5000;
-
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-if (process.env.NODE_ENV === 'production') {
 
-  app.use(express.static('client/build'));
-
-  app.get('*', (req,res) => 
-
- res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
-
-}
 // MongoDB Configuration
+ const mongoDBUrl1 = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.2f8ph.mongodb.net/${process.env.DB}?retryWrites=true&w=majority&appName=Cluster0`;
 
- mongoose.connect(process.env.MONGO_URI)   // REVISAR LA CONEXION A LA DB
+ mongoose.connect(mongoDBUrl1)   // REVISAR LA CONEXION A LA DB
   .then(() => console.log('Conexion establecida con la base de datos de Atlas'))
   .catch(err => console.log('Error connecting to MongoDB', err)); 
 
@@ -184,7 +174,7 @@ app.post('/logout', (req, res) => {
 
 
 // Start the server
-app.listen(PORT, () => {
-  console.log('Server running on port ' + PORT);
+app.listen(3001, () => {
+  console.log('Server running on port 3001');
 });
 
