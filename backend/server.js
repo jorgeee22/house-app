@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require("mongoose");
 const cors = require('cors');
-const userModel = require('../src/models/users')
-const HouseModel  = require('../src/models/houses')
-const ContactModel  = require('../src/models/forms')
-
+const userModel = require('../client/src/models/users')
+const HouseModel  = require('../client/src/models/houses')
+const ContactModel  = require('../client/src/models/forms')
+const FRONTEND_URL = require ('./config.js')
+const PORT = require ('./config.js')
 const bodyParser = require('body-parser');
 const app = express();
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+
+app.use(cors({ origin: FRONTEND_URL, credentials: true }));
 app.use(express.json());  // Parse JSON data
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,15 +18,14 @@ require('dotenv').config();
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
 // MongoDB Configuration
- const mongoDBUrl1 = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.2f8ph.mongodb.net/${process.env.DB}?retryWrites=true&w=majority&appName=Cluster0`;
 
- mongoose.connect(mongoDBUrl1)   // REVISAR LA CONEXION A LA DB
+ mongoose.connect(process.env.MONGO_URI)   // REVISAR LA CONEXION A LA DB
   .then(() => console.log('Conexion establecida con la base de datos de Atlas'))
   .catch(err => console.log('Error connecting to MongoDB', err)); 
 
@@ -174,7 +175,7 @@ app.post('/logout', (req, res) => {
 
 
 // Start the server
-app.listen(3001, () => {
-  console.log('Server running on port 3001');
+app.listen(PORT, () => {
+  console.log('Server running on port ' + PORT);
 });
 

@@ -17,7 +17,7 @@ function HouseDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/houses/${zipCode}`)
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/houses/${zipCode}`)
       .then((response) => setHouse(response.data), zipCode)
       .catch((err) => console.log(err));
   }, [zipCode]);
@@ -29,7 +29,7 @@ function HouseDetails() {
 
   const handleForm = async (e) => {
     e.preventDefault()
-    await axios.post('http://localhost:3001/contacts', {name, email, phoneNumber})
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/contacts`, {name, email, phoneNumber})
     .then(result => {console.log(result)
       alert('Contact information saved successfully!');
     })

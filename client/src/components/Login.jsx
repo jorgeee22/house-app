@@ -15,7 +15,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/login', { email, password }, { withCredentials: true });
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, { email, password }, { withCredentials: true });
       alert(response.data.message);
       navigate('/home'); 
       // Navigate to home on success

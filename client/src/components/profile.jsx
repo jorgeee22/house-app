@@ -13,7 +13,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/profile', { withCredentials: true });
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/profile`, { withCredentials: true });
         setUser(response.data.user);
         setHouses(response.data.user.savedHouses );
       } catch (error) {
@@ -29,7 +29,7 @@ const Profile = () => {
   
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:3001/logout', {}, { withCredentials: true });
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/logout`, {}, { withCredentials: true });
       navigate('/login');  // Redirigir al login después de hacer logout
     } catch (error) {
       console.error('Logout error:', error);

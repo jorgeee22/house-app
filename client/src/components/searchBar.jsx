@@ -13,7 +13,7 @@ function SearchBar(){
     const handleSearch = (e) => {
       e.preventDefault();
   
-      axios.get('http://localhost:3001/search', { params: { address } })
+      axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/search`, { params: { address } })
         .then((response) => {
           console.log(response.data); // Imprime los resultados en consola
           navigate('/searchResults', { state: { houses: response.data } }); // Redirige con los datos encontrados
