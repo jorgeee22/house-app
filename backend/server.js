@@ -1,9 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const userModel = require('../client/src/models/users')
-const HouseModel  = require('../client/src/models/houses')
-const ContactModel  = require('../client/src/models/forms')
+const userModel = require('./models/users')
+const HouseModel  = require('./models/houses')
+const ContactModel  = require('./models/forms')
 const FRONTEND_URL = require ('./config.js')
 const bodyParser = require('body-parser');
 const app = express();
