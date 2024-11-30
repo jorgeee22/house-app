@@ -5,7 +5,6 @@ const userModel = require('../client/src/models/users')
 const HouseModel  = require('../client/src/models/houses')
 const ContactModel  = require('../client/src/models/forms')
 const FRONTEND_URL = require ('./config.js')
-const PORT = require ('./config.js')
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 3001;
