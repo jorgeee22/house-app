@@ -57,7 +57,7 @@ function CustomFooter() {
         
       </div>
 
-      <img src={"https://www.zillowstatic.com/s3/pfs/static/footer-art.svg"} alt="Company Logo" />
+      
 
     </footer>
     
