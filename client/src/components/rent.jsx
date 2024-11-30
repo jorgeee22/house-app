@@ -11,7 +11,7 @@ import Footer2 from '../components/Footer2'; // Assuming you’ll create a Foote
   const [houses, setHouses] = useState([])
   
   useEffect(()=>{
-     axios.get(`http://${process.env.REACT_APP_BACKEND_URL}/rent-a-house`)
+     axios.get(`${process.env.REACT_APP_BACKEND_URL}/rent-a-house`)
      .then(houses=> setHouses(houses.data))
      .catch(err => console.log(err))
   },[])
