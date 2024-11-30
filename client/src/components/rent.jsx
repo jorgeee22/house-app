@@ -16,6 +16,19 @@ import Footer2 from '../components/Footer2'; // Assuming you’ll create a Foote
      .catch(err => console.log(err))
   },[])
 
+  const handleSaveHouse = async (houseId) => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/save-house`,
+        { houseId },
+        { withCredentials: true } // Necesario para enviar cookies al backend
+      );
+      alert(response.data.message); // Mostrar mensaje de éxito
+    } catch (error) {
+      console.error("Error saving house:", error);
+      alert(error.response?.data?.error || "An error occurred");
+    }
+  };
   
   return (
       <>
@@ -57,7 +70,8 @@ import Footer2 from '../components/Footer2'; // Assuming you’ll create a Foote
 
                   {/* Botones de Save y Share */}
                   <div className="d-flex justify-content-between mt-2">
-                    <button className="btn btn-outline-success btn-sm save-btn">
+                    <button className="btn btn-outline-success btn-sm save-btn"
+                    onClick={() => handleSaveHouse(house._id)}>
                       <i className="fas fa-heart"></i> Save
                     </button>
                     <button className="btn btn-outline-secondary btn-sm share-btn">
