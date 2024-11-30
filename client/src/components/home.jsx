@@ -6,7 +6,8 @@ import CustomFooter from '../components/Footer'; // Assuming Footer component is
 import { Carousel } from 'react-bootstrap';
 import ZillowAudience from './cards'; // Assuming ZillowAudience component is created
 import SearchBar from '../components/searchBar';
-
+import { Container, Row, Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 function Home() {
 
   
@@ -26,41 +27,47 @@ function Home() {
 
 {/* Services Section */}
 <section className="services-section my-5">
-  <div className="container">
-    <div className="row">
-      <div className="col-md-4">
-        <div className="card mb-4">
-          <img src="/pics/Leslie_Living-Room-Hero.jpg.webp" className="card-img-top" alt="Buy House" />
-          <div className="card-body">
-            <h5 className="card-title">Buy House</h5>
-            <p className="card-text">We can help find the house of your dreams.</p>
-            <a href="/buy-a-house" className="btn btn-primary">See homes</a>
-          </div>
-        </div>
-      </div>
-      <div className="col-md-4">
-        <div className="card mb-4">
-          <img src="/pics/MED-Park-2.jpg.webp" className="card-img-top" alt="Sell House" />
-          <div className="card-body">
-            <h5 className="card-title">Sell House</h5>
-            <p className="card-text">We can help you navigate to a successful sale.</p>
-            <a href="/sell" className="btn btn-primary">See your options</a>
-          </div>
-          </div>
-        </div>
-      <div className="col-md-4">
-        <div className="card mb-4">
-          <img src="/pics/Tomei_Bleeker_1.jpg.webp" className="card-img-top" alt="Rent a House" />
-          <div className="card-body">
-            <h5 className="card-title">Rent a House</h5>
-            <p className="card-text">Find the perfect home to rent at the best price.</p>
-            <a href="/rent-a-house" className="btn btn-primary">Find rentals here</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <Container>
+        <Row>
+          <Col md={4}>
+            <Card className="mb-4">
+              <Card.Img variant="top" src="/pics/Leslie_Living-Room-Hero.jpg.webp" alt="Buy House" />
+              <Card.Body>
+                <Card.Title>Buy House</Card.Title>
+                <Card.Text>We can help find the house of your dreams.</Card.Text>
+                <Link to="/buy-a-house" className="btn btn-primary">
+                  See homes
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4}>
+            <Card className="mb-4">
+              <Card.Img variant="top" src="/pics/MED-Park-2.jpg.webp" alt="Sell House" />
+              <Card.Body>
+                <Card.Title>Sell House</Card.Title>
+                <Card.Text>We can help you navigate to a successful sale.</Card.Text>
+                <Link to="/sell" className="btn btn-primary">
+                  See your options
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4}>
+            <Card className="mb-4">
+              <Card.Img variant="top" src="/pics/Tomei_Bleeker_1.jpg.webp" alt="Rent a House" />
+              <Card.Body>
+                <Card.Title>Rent a House</Card.Title>
+                <Card.Text>Find the perfect home to rent at the best price.</Card.Text>
+                <Link to="/rent-a-house" className="btn btn-primary">
+                  Find rentals here
+                </Link>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </section>
 
 {/* Carousel Section */}
 <section className="carousel-section my-5">
