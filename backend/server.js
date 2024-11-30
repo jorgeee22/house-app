@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const cors = require('cors');
 const userModel = require('../client/src/models/users')
 const HouseModel  = require('../client/src/models/houses')
@@ -8,6 +8,7 @@ const FRONTEND_URL = require ('./config.js')
 const PORT = require ('./config.js')
 const bodyParser = require('body-parser');
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 app.use(cors({ origin: FRONTEND_URL, credentials: true }));
 app.use(express.json());  // Parse JSON data
