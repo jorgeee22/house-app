@@ -62,7 +62,7 @@ function HouseDetails() {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 my-4">
             <div className="card p-3">
               <h4 className="text-center">Contact</h4>
               <p>Interested in this property? Leave us your information and we will get in touch!</p>
