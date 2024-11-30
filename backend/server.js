@@ -12,9 +12,9 @@ const path = require('path');
 
 app.use(cors({ origin: FRONTEND_URL, credentials: true }));
 app.use(express.json());  // Parse JSON data
-const buildPath = path.join(__dirname, '../client/build');
 
-app.use(express.static(buildPath));
+
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 require('dotenv').config();
@@ -26,7 +26,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 // MongoDB Configuration
